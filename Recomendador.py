@@ -67,3 +67,20 @@
 
 #Correção de Bugs: Resolva quaisquer problemas que surgirem após a implementação inicial.
 #Atualizações: Adicione novas funcionalidades ou categorias de recomendações conforme necessário.
+
+
+def recomendar():
+    
+
+filmes = {}
+games = {}
+livros = {}
+
+
+nome_usuario = input("Olá, Qual seu nome?")
+categoria = input(f"""{nome_usuario} gostaria de recomendações de que tipo?
+                  1 - Filmes
+                  2 - Livros
+                  3 - Games""")
+
+

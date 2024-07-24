@@ -3,12 +3,6 @@
 
 #Etapas do Planejamento:
 
-#Pesquisa: Investigue as categorias populares de conteúdo geek e compile listas de recomendações.
-#Brainstorming: Determine como o usuário irá interagir com o programa. Por exemplo, como eles irão inserir suas preferências e como o programa irá sugerir categorias.
-#Receber entrada do usuário.
-#Sugerir uma categoria.
-#Fornecer recomendações baseadas na categoria escolhida.
-#Requisitos Não Funcionais: Determine os critérios de desempenho e a usabilidade, como a resposta rápida às entradas do usuário.
 #2. Estrutura do Projeto
 #Componentes do Sistema:
 
@@ -68,19 +62,54 @@
 #Correção de Bugs: Resolva quaisquer problemas que surgirem após a implementação inicial.
 #Atualizações: Adicione novas funcionalidades ou categorias de recomendações conforme necessário.
 
+import random
 
 def recomendar():
+    if categoria == 1:
+        recomendar_filmes = input(f"Você escolheu a categoria {filmes} {nome_Usuario}? S/N")
+        
+        if recomendar_filmes.lower() == "s":
+            recomendacao = random.choice(filmes)
+            print(recomendacao)
+        else:
+            print(f"Alguma coisa deu errado {nome_usuario}, vamos tentar novamente?")
+
+    elif categoria == 3:
+        recomendar_games = input(f"Você escolheu a categoria {games}? S/N")
+
+        if recomendar_games.lower() == "s":
+            recomendacao = random.choice(games)
+            print(recomendacao)
+
+        else:
+            print(f"Alguma coisa deu errado {nome_usuario}, vamos tentar novamente?")
+
+    elif categoria == 2:
+        recomendar_livros = input(f"Você escolheu a categoria {livros}? S/N")
+        
+        if recomendar_livros.lower() == "s":
+            recomendacao = random.choice(livros)
+            print(recomendacao)
+
+        else:
+            print(f"Alguma coisa deu errado {nome_usuario}, vamos tentar novamente?")
+
+
+
     
 
 filmes = {}
 games = {}
 livros = {}
 
-
-nome_usuario = input("Olá, Qual seu nome?")
-categoria = input(f"""{nome_usuario} gostaria de recomendações de que tipo?
+while True:
+    
+    nome_usuario = input("Olá, Qual seu nome?")
+    categoria = input(f"""{nome_usuario} gostaria de recomendações de que tipo?
                   1 - Filmes
                   2 - Livros
                   3 - Games""")
+    
+    recomendar()
 
 

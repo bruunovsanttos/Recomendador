@@ -13,7 +13,7 @@ def recomendar_filmes():
 
         nota = input(f"Gostou da recomendação {nome_usuario}? S/N")
         if nota == "s":
-                notas()
+                pass
         else:
                 print(f"Agradecemos sua utilização {nome_usuario}")
 
@@ -28,12 +28,12 @@ def recomendar_livros():
         ano = livros[recomendacao][0]
         autor = livros[recomendacao][1]
         print(f"""Recomendação de livro:{recomendacao} 
-                            Ano de lançamento:{ano} 
-                            Autor:{autor}""")
+                  Ano de lançamento:{ano} 
+                  Autor:{autor}""")
 
         nota = input(f"Gostou da recomendação {nome_usuario}? S/N")
         if nota == "s":
-            notas()
+            pass
         else:
             print(f"Agradecemos sua utilização {nome_usuario}")
 
@@ -56,7 +56,7 @@ def recomendar_games():
 
         nota = input(f"Gostou da recomendação {nome_usuario}? S/N")
         if nota == "s":
-            notas()
+            pass
         else:
             print(f"Agradecemos sua utilização {nome_usuario}")
 
@@ -64,12 +64,11 @@ def recomendar_games():
         print(f"Alguma coisa deu errado {nome_usuario}, vamos tentar novamente?")
 
 def registrar_nota(categoria, titulo):
-    nota = input(f"Deseja colocar uma nota na recomendação que foi dada? S/N")
-    if nota.lower()== "s":
-        valor_nota = int(input(f"Qual nota você deseja dar de 1 à 5 para a {recomendacao} {nome_usuario}? ")
-        valor_nota.append(nota)
 
-
+    pass#nota = input(f"Deseja colocar uma nota na recomendação que foi dada? S/N")
+    #if nota.lower()== "s":
+     #   valor_nota = int(input(f"Qual nota você deseja dar de 1 à 5 para a {recomendacao} {nome_usuario}? ")
+       # valor_nota.append(nota)
 
 
 filmes = {
@@ -100,7 +99,7 @@ games = {
 }
 
 livros = {
-    "O Guai do Mochieliro Das Galáxias": ["1979", "Douglas Adams"],
+    "O Guia do Mochieliro Das Galáxias": ["1979", "Douglas Adams"],
     "O Senhor Dos Anéis": ["1954", "J. R. R. Tolkien"],
     "Duna": ["1965", "Frank Herbert"],
     "2001 - Uma Odisseia no espaço": ["1968", "Arthur C. Clarke"],

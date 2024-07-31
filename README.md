@@ -16,6 +16,11 @@ Projeo ainda em execução
 
 #### Fotos de andamento do projeto
 
+Funções 
+[recomendadorcode](https://github.com/user-attachments/assets/e5135c50-22d8-487b-a67a-8d9d8d9f6ee4)
+
+Menu do projeto
+![recomendadorcode2](https://github.com/user-attachments/assets/99a54177-2c84-447c-a25b-0c309fabcfd0)
 
 
 

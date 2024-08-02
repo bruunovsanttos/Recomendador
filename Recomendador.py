@@ -1,4 +1,26 @@
 import random
+from tkinter import *
+
+Tk()
+
+def menu():
+    while True:
+
+        categoria = int(input(f"""{nome_usuario} gostaria de recomendações de que tipo?"
+    1 - Filmes
+    2 - Livros
+    3 - Games
+    """))
+
+        if categoria == 1:
+            recomendar_filmes()
+
+        elif categoria == 2:
+            recomendar_livros()
+
+        elif categoria == 3:
+            recomendar_games()
+
 
 def recomendar_filmes():
     recomendar_filmes = input(f"Você escolheu a categoria filmes {nome_usuario}? S/N")
@@ -113,20 +135,24 @@ livros = {
 
 
 nome_usuario = input("Olá, Qual seu nome? ")
+menu()
 
-while True:
 
-    categoria = int(input(f"""{nome_usuario} gostaria de recomendações de que tipo?"
-1 - Filmes
-2 - Livros
-3 - Games
-"""))
 
-    if categoria == 1:
-        recomendar_filmes()
+janela = Tk()
 
-    elif categoria == 2:
-        recomendar_livros()
+janela.title("Recomendador Geek")
 
-    elif categoria == 3:
-        recomendar_games()
+texto_inicial = Label(janela, text="Seja bem vindo ao Recomendador GEEK ")
+texto_orientacao.grid(column=0, row=0)
+
+botao = Button(janela, text="Vamos começar?", command=menu)
+botao.grid(column=0, row=1)
+
+texto_menu = Label(janela, text="")
+texto_menu.grid(column=0, row=2)
+
+
+janela.mainloop()
+
+

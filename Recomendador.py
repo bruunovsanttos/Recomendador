@@ -10,6 +10,7 @@ def menu():
     1 - Filmes
     2 - Livros
     3 - Games
+    4 - Sair
     """))
 
         if categoria == 1:
@@ -20,6 +21,12 @@ def menu():
 
         elif categoria == 3:
             recomendar_games()
+
+        elif categoria == 4:
+            print(f"Obrigado por utilizar nosso recomendador {nome_usuario}.")
+            break
+
+
 
 
 def recomendar_filmes():
@@ -33,9 +40,10 @@ def recomendar_filmes():
                 Ano de lançamento:{ano} 
                 Diretor:{diretor}""")
 
-        nota = input(f"Gostou da recomendação {nome_usuario}? S/N")
-        if nota == "s":
-                pass
+        registrar_nota = input(f"Gostou da recomendação {nome_usuario}? S/N")
+        if registrar_nota == "s":
+            registro_de_nota()
+
         else:
                 print(f"Agradecemos sua utilização {nome_usuario}")
 
@@ -85,12 +93,27 @@ def recomendar_games():
     else:
         print(f"Alguma coisa deu errado {nome_usuario}, vamos tentar novamente?")
 
-def registrar_nota(categoria, titulo):
+def registro_de_nota(categoria, titulo):
+    nota = int(input(f"qual nota você deseja dar de 1 à 5 para o titulo"))
+    if 1 <= nota <=5:
+        if titulo not in notas[categoria]:
+            notas[categoria][titulo] = []
+            notas[categoria][titulo].append(nota)
+            print("Avaliação feita com sucesso!")
+        else:
+            print("A nota invalida, insira uma nota de 1 à 5.")
+    else:
+        print("entrada invalida, tente novamente inserindo um número de 1 À 5")
 
-    pass#nota = input(f"Deseja colocar uma nota na recomendação que foi dada? S/N")
-    #if nota.lower()== "s":
-     #   valor_nota = int(input(f"Qual nota você deseja dar de 1 à 5 para a {recomendacao} {nome_usuario}? ")
-       # valor_nota.append(nota)
+
+
+
+def media_de_nota(categoria, titulo):
+    if titulo in notas[categoria] and notas[categoria][titulo]:
+        media = sum(notas[categoria][titulo]) / len(notas[categoria][titulo])
+        print(f"A nota média para {titulo} é: {media:.2f}")
+    else:
+        print(f"Não há avaliações para {titulo} ainda.")
 
 
 filmes = {
@@ -133,26 +156,33 @@ livros = {
     "Neuromancer": ["1984", "William Gibson"]
 }
 
+notas = {
+    "filmes": {},
+    "games": {},
+    "livros": {}
+}
+
 
 nome_usuario = input("Olá, Qual seu nome? ")
 menu()
 
 
+#tentativa do tk ainda a atualizar
 
-janela = Tk()
+#janela = Tk()
 
-janela.title("Recomendador Geek")
+#janela.title("Recomendador Geek")
 
-texto_inicial = Label(janela, text="Seja bem vindo ao Recomendador GEEK ")
-texto_orientacao.grid(column=0, row=0)
+#texto_inicial = Label(janela, text="Seja bem vindo ao Recomendador GEEK ")
+#texto_inicial.grid(column=0, row=0)
 
-botao = Button(janela, text="Vamos começar?", command=menu)
-botao.grid(column=0, row=1)
+#botao = Button(janela, text="Vamos começar?", command=menu)
+#botao.grid(column=0, row=1)
 
-texto_menu = Label(janela, text="")
-texto_menu.grid(column=0, row=2)
+#texto_menu = Label(janela, text="")
+#texto_menu.grid(column=0, row=2)
 
 
-janela.mainloop()
+#janela.mainloop()
 
 

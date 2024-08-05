@@ -1,7 +1,4 @@
 import random
-from tkinter import *
-
-Tk()
 
 def menu():
     while True:
@@ -26,9 +23,6 @@ def menu():
             print(f"Obrigado por utilizar nosso recomendador {nome_usuario}.")
             break
 
-
-
-
 def recomendar_filmes():
     recomendar_filmes = input(f"Você escolheu a categoria filmes {nome_usuario}? S/N")
 
@@ -42,7 +36,7 @@ def recomendar_filmes():
 
         registrar_nota = input(f"Gostou da recomendação {nome_usuario}? S/N")
         if registrar_nota == "s":
-            registro_de_nota()
+            pass
 
         else:
                 print(f"Agradecemos sua utilização {nome_usuario}")
@@ -94,26 +88,11 @@ def recomendar_games():
         print(f"Alguma coisa deu errado {nome_usuario}, vamos tentar novamente?")
 
 def registro_de_nota(categoria, titulo):
-    nota = int(input(f"qual nota você deseja dar de 1 à 5 para o titulo"))
-    if 1 <= nota <=5:
-        if titulo not in notas[categoria]:
-            notas[categoria][titulo] = []
-            notas[categoria][titulo].append(nota)
-            print("Avaliação feita com sucesso!")
-        else:
-            print("A nota invalida, insira uma nota de 1 à 5.")
-    else:
-        print("entrada invalida, tente novamente inserindo um número de 1 À 5")
-
-
-
+    pass
 
 def media_de_nota(categoria, titulo):
-    if titulo in notas[categoria] and notas[categoria][titulo]:
-        media = sum(notas[categoria][titulo]) / len(notas[categoria][titulo])
-        print(f"A nota média para {titulo} é: {media:.2f}")
-    else:
-        print(f"Não há avaliações para {titulo} ainda.")
+    pass
+
 
 
 filmes = {
@@ -165,24 +144,5 @@ notas = {
 
 nome_usuario = input("Olá, Qual seu nome? ")
 menu()
-
-
-#tentativa do tk ainda a atualizar
-
-#janela = Tk()
-
-#janela.title("Recomendador Geek")
-
-#texto_inicial = Label(janela, text="Seja bem vindo ao Recomendador GEEK ")
-#texto_inicial.grid(column=0, row=0)
-
-#botao = Button(janela, text="Vamos começar?", command=menu)
-#botao.grid(column=0, row=1)
-
-#texto_menu = Label(janela, text="")
-#texto_menu.grid(column=0, row=2)
-
-
-#janela.mainloop()
 
 

@@ -88,7 +88,12 @@ def recomendar_games():
         print(f"Alguma coisa deu errado {nome_usuario}, vamos tentar novamente?")
 
 def registro_de_nota(categoria, titulo):
-    pass
+    nota = float(input("Por favor, avalie de 1 a 5: "))
+            if 1 <= nota <= 5:
+                if categoria not in notas:
+                    notas[categoria] = {}
+                notas[categoria][titulo] = nota
+                break
 
 def media_de_nota(categoria, titulo):
     pass

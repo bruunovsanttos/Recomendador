@@ -94,6 +94,8 @@ def registro_de_nota(categoria, titulo):
                     notas[categoria] = {}
                 notas[categoria][titulo] = nota
                 break
+            else:
+                print(f"resgistro não contabilizado, tente novamente...")
 
 def media_de_nota(categoria, titulo):
     pass

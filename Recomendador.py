@@ -76,11 +76,11 @@ def recomendar_games():
                 Ano de lançamento:{ano} 
                 Diretor:{diretor}""")
 
-        continuar = input(f"Gostou da recomendação {nome_usuario}? S/N")
 
         nota = input(f"Gostou da recomendação {nome_usuario}? S/N")
-        if nota == "s":
-            pass
+        if nota.lower() == "s":
+            registro_de_nota()
+
         else:
             print(f"Agradecemos sua utilização {nome_usuario}")
 
@@ -89,16 +89,25 @@ def recomendar_games():
 
 def registro_de_nota(categoria, titulo):
     nota = float(input("Por favor, avalie de 1 a 5: "))
-            if 1 <= nota <= 5:
-                if categoria not in notas:
-                    notas[categoria] = {}
-                notas[categoria][titulo] = nota
-                break
-            else:
-                print(f"resgistro não contabilizado, tente novamente...")
+    if 1 <= nota <= 5:
+        if categoria not in notas:
+            notas[categoria] = {}
+            notas[categoria][titulo] = nota
+            notas[categoria][titulo].append(nota)
+    else:
+        print(f"resgistro não contabilizado, tente novamente...")
 
 def media_de_nota(categoria, titulo):
-    pass
+    if categoria in notas and titulo in notas[categoria]:
+        lista_notas = notas[categoria][titulo]
+
+        if lista_notas:
+            media = sum(lista_notas) / len(lista_notas)
+            print(f"A média das notas para '{titulo}' na categoria '{categoria}' é {media:.1f}")
+        else:
+            print(f"Não há notas registradas para '{titulo}' na categoria '{categoria}'.")
+    else:
+        print(f"Categoria '{categoria}' ou título '{titulo}' não encontrado(s).")
 
 
 
@@ -143,9 +152,44 @@ livros = {
 }
 
 notas = {
-    "filmes": {},
-    "games": {},
-    "livros": {}
+    "filmes": { "Star Wars": [],
+    "O Guia Do Mochileiro das Galáxias": [],
+    "De Volta Para o Futuro": [],
+    "Duna": [],
+    "Jogador Nº 1": [],
+    "Os Caça Fantasmas": [],
+    "Matrix": [],
+    "Akira": [],
+    "Interestrelar": [],
+    "Blade Runner": [],
+    "Senhor dos Anéis": []
+    },
+
+    "games": {
+    "Mario Bros.": [],
+    "Sonic the Hedgehog": [],
+    "The Legend of Zelda: Ocarina of Time": [],
+    "Metroid": [],
+    "Metal Slug": [],
+    "Metal Gear": [],
+    "Grand Theft Auto (GTA)": [],
+    "Tetris": [],
+    "Pac-Man": [],
+    "Pokemon": []
+    },
+
+    "livros": {
+        "O Guia do Mochieliro Das Galáxias": [],
+        "O Senhor Dos Anéis": [],
+        "Duna": [],
+        "2001 - Uma Odisseia no espaço": [],
+        "Jogos Vorazes": [],
+        "Percy Jackson": [],
+        "Harry Potter": [],
+        "Viagem ao Centro Da Terra": [],
+        "As Crônicas de Gelo e do Fogo": [],
+        "Neuromancer": []
+    }
 }
 
 

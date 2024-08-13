@@ -87,13 +87,13 @@ def recomendar_games():
     else:
         print(f"Alguma coisa deu errado {nome_usuario}, vamos tentar novamente?")
 
-def registro_de_nota(categoria, titulo):
+def registro_de_nota():
     nota = float(input("Por favor, avalie de 1 a 5: "))
     if 1 <= nota <= 5:
-        if categoria not in notas:
-            notas[categoria] = {}
-            notas[categoria][titulo] = nota
-            notas[categoria][titulo].append(nota)
+        if categoria not in notas[catergoria]:
+
+            notas[categoria][titulo] = []
+        notas[categoria][titulo].append(nota)
     else:
         print(f"resgistro não contabilizado, tente novamente...")
 

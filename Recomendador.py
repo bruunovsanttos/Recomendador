@@ -24,7 +24,7 @@ def menu():
             break
 
 def recomendar_filmes():
-    recomendar_filmes = input(f"Você escolheu a categoria filmes {nome_usuario}? S/N")
+    recomendar_filmes = input(f"Você escolheu a categoria filmes {nome_usuario}? S/N").strip().lower()
 
     if recomendar_filmes.lower() == "s":
         recomendacao = random.choice(list(filmes.keys()))
@@ -32,11 +32,14 @@ def recomendar_filmes():
         diretor = filmes[recomendacao][1]
         print(f"""Recomendação de filme:{recomendacao} 
                 Ano de lançamento:{ano} 
-                Diretor:{diretor}""")
+                Diretor:{diretor}
+                Nota do Titulo: {media_de_nota("filmes", recomendacao)}""")
 
-        registrar_nota = input(f"Gostou da recomendação {nome_usuario}? S/N")
+
+
+        registrar_nota = input(f"Gostou da recomendação {nome_usuario}? S/N").strip().lower()
         if registrar_nota == "s":
-            pass
+            registro_de_nota("filmes", recomendacao)
 
         else:
                 print(f"Agradecemos sua utilização {nome_usuario}")
@@ -45,7 +48,7 @@ def recomendar_filmes():
         print(f"Alguma coisa deu errado {nome_usuario}, vamos tentar novamente?")
 
 def recomendar_livros():
-    recomendar_livros = input(f"Você escolheu a categoria livros {nome_usuario}?  S/N")
+    recomendar_livros = input(f"Você escolheu a categoria livros {nome_usuario}?  S/N").strip().lower()
 
     if recomendar_livros.lower() == "s":
         recomendacao = random.choice(list(livros.keys()))
@@ -53,11 +56,13 @@ def recomendar_livros():
         autor = livros[recomendacao][1]
         print(f"""Recomendação de livro:{recomendacao} 
                   Ano de lançamento:{ano} 
-                  Autor:{autor}""")
+                  Autor:{autor}
+                  Nota do Titulo: {media_de_nota("livros", recomendacao)}""")
 
-        nota = input(f"Gostou da recomendação {nome_usuario}? S/N")
+        nota = input(f"Gostou da recomendação {nome_usuario}? S/N").strip().lower()
         if nota == "s":
-            pass
+            registro_de_nota("livros", recomendacao)
+
         else:
             print(f"Agradecemos sua utilização {nome_usuario}")
 
@@ -66,31 +71,30 @@ def recomendar_livros():
         print(f"Alguma coisa deu errado {nome_usuario}, vamos tentar novamente?")
 
 def recomendar_games():
-    recomendar_games = input(f"Você escolheu a categoria games {nome_usuario}? S/N")
+    recomendar_games = input(f"Você escolheu a categoria games {nome_usuario}? S/N").strip().lower()
 
-    if recomendar_games.lower() == "s":
+    if recomendar_games == "s":
         recomendacao = random.choice(list(games.keys()))
         ano = games[recomendacao][0]
         diretor = games[recomendacao][1]
         print(f"""Recomendação de Game:{recomendacao} 
                 Ano de lançamento:{ano} 
-                Diretor:{diretor}""")
+                Diretor:{diretor}
+                Nota do titulo: {media_de_nota("games", recomendacao)} """)
 
 
         nota = input(f"Gostou da recomendação {nome_usuario}? S/N")
-        if nota.lower() == "s":
-            registro_de_nota()
-
-        else:
-            print(f"Agradecemos sua utilização {nome_usuario}")
+        if nota == "s":
+            registro_de_nota("games", recomendacao)
+        media_de_nota("games", recomendacao)
 
     else:
         print(f"Alguma coisa deu errado {nome_usuario}, vamos tentar novamente?")
 
-def registro_de_nota():
+def registro_de_nota(categoria, titulo):
     nota = float(input("Por favor, avalie de 1 a 5: "))
     if 1 <= nota <= 5:
-        if categoria not in notas[catergoria]:
+        if categoria not in notas[categoria]:
 
             notas[categoria][titulo] = []
         notas[categoria][titulo].append(nota)

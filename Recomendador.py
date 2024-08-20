@@ -114,7 +114,8 @@ def media_de_nota(categoria, titulo):
     else:
         print(f"Categoria '{categoria}' ou título '{titulo}' não encontrado(s).")
 
-
+with open('banco_de_dados.json', 'r') as f:
+    dados = json.load(f)
 
 filmes = {
     "Star Wars": ["1977", "George Lucas"],
@@ -204,10 +205,6 @@ dados = {
     "games": games,
     "notas": notas
 }
-
-
-with open('banco_de_dados.json', 'r') as f:
-    dados = json.load(f)
 
 with open("banco_de_dados.json", "w") as f:
     json.dump(dados, f)

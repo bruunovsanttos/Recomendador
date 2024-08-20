@@ -1,4 +1,5 @@
 import random
+import json
 
 def menu():
     while True:
@@ -156,45 +157,64 @@ livros = {
 }
 
 notas = {
-    "filmes": { "Star Wars": [],
-    "O Guia Do Mochileiro das Galáxias": [],
-    "De Volta Para o Futuro": [],
-    "Duna": [],
-    "Jogador Nº 1": [],
-    "Os Caça Fantasmas": [],
-    "Matrix": [],
-    "Akira": [],
-    "Interestrelar": [],
-    "Blade Runner": [],
-    "Senhor dos Anéis": []
+    "filmes": { "Star Wars": [5, ],
+    "O Guia Do Mochileiro das Galáxias": [5, ],
+    "De Volta Para o Futuro": [5, ],
+    "Duna": [5, ],
+    "Jogador Nº 1": [5, ],
+    "Os Caça Fantasmas": [5, ],
+    "Matrix": [5, ],
+    "Akira": [5, ],
+    "Interestrelar": [5, ],
+    "Blade Runner": [5, ],
+    "Senhor dos Anéis": [5, ]
     },
 
     "games": {
-    "Mario Bros.": [],
-    "Sonic the Hedgehog": [],
-    "The Legend of Zelda: Ocarina of Time": [],
-    "Metroid": [],
-    "Metal Slug": [],
-    "Metal Gear": [],
-    "Grand Theft Auto (GTA)": [],
-    "Tetris": [],
-    "Pac-Man": [],
-    "Pokemon": []
+    "Mario Bros.": [5, ],
+    "Sonic the Hedgehog": [5, ],
+    "The Legend of Zelda: Ocarina of Time": [5, ],
+    "Metroid": [5, ],
+    "Metal Slug": [5, ],
+    "Metal Gear": [5, ],
+    "Grand Theft Auto (GTA)": [5, ],
+    "Tetris": [5, ],
+    "Pac-Man": [5, ],
+    "Pokemon": [5, ]
     },
 
     "livros": {
-        "O Guia do Mochieliro Das Galáxias": [],
-        "O Senhor Dos Anéis": [],
-        "Duna": [],
-        "2001 - Uma Odisseia no espaço": [],
-        "Jogos Vorazes": [],
-        "Percy Jackson": [],
-        "Harry Potter": [],
-        "Viagem ao Centro Da Terra": [],
-        "As Crônicas de Gelo e do Fogo": [],
-        "Neuromancer": []
+        "O Guia do Mochieliro Das Galáxias": [5, ],
+        "O Senhor Dos Anéis": [5, ],
+        "Duna": [5, ],
+        "2001 - Uma Odisseia no espaço": [5, ],
+        "Jogos Vorazes": [5, ],
+        "Percy Jackson": [5, ],
+        "Harry Potter": [5, ],
+        "Viagem ao Centro Da Terra": [5, ],
+        "As Crônicas de Gelo e do Fogo": [5, ],
+        "Neuromancer": [5, ]
     }
+
 }
+
+dados = {
+    "filmes": filmes,
+    "livros": livros,
+    "games": games,
+    "notas": notas
+}
+
+
+with open('banco_de_dados.json', 'r') as f:
+    dados = json.load(f)
+
+with open("banco_de_dados.json", "w") as f:
+    json.dump(dados, f)
+
+
+
+
 
 
 nome_usuario = input("Olá, Qual seu nome? ")

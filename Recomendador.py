@@ -1,6 +1,15 @@
 import random
 import json
 
+with open('banco_de_dados.json', 'r') as f:
+    dados = json.load(f)
+
+filmes = dados["filmes"]
+livros = dados["livros"]
+games = dados["games"]
+notas = dados["notas"]
+
+
 def menu():
     while True:
 
@@ -113,9 +122,6 @@ def media_de_nota(categoria, titulo):
             print(f"Não há notas registradas para '{titulo}' na categoria '{categoria}'.")
     else:
         print(f"Categoria '{categoria}' ou título '{titulo}' não encontrado(s).")
-
-with open('banco_de_dados.json', 'r') as f:
-    dados = json.load(f)
 
 filmes = {
     "Star Wars": ["1977", "George Lucas"],

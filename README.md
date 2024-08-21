@@ -9,10 +9,15 @@ _* Após a ideia de criar um recomendador retirado do site [Codecademy](https://
 #### Histórico
 
 Para isso criei um scrip de montagm do projeto.  
-A ideia inicial de um projeto que recomendasse apenas um tema me incomodou pelo tema escolhio então escolhi 3 temas: Filmes, livros e games.  
-Com isso criei um codigo para recomendação de temas com dicionários, para testes unitarios do código. Em um proximo momento apos feito o processo eles serão revertidos em um arquivo json para leitura e portabilidade.
-Após iso tenho programado a criação de uma interace simples utilizando a biblioteca [Tkinter](https://docs.python.org/3/library/tkinter.html)  
-Projeo ainda em execução   
+A ideia inicial de um projeto que recomendasse apenas um tema me incomodou pelo tema escolhido então escolhi 3 temas: Filmes, livros e games.  
+Com isso criei um codigo para recomendação de temas com dicionários, para testes unitarios do código. Em um proximo momento apos feito o processo eles serão revertidos em um arquivo json para leitura e portabilidade. E também para melhoria no processamento de dados.
+O item JSON "Banco_de_dados" foi criado para esta feature visando a melhoria de processamento. Funcionalidade que foi aprendida como um banco de dados NOSQL. [Arquivo JSON](https://github.com/bruunovsanttos/Recomendador/blob/main/banco_de_dados.json)
+
+Agora estamos trabalhando na feature de criação de uma interface grafica mais amigavel para o programa. 
+Para isso estou utilizando a biblioteca [Tkinter](https://docs.python.org/3/library/tkinter.html)  
+
+
+Projeto ainda em execução   
 
 #### Fotos de andamento do projeto
 

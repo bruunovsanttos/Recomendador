@@ -124,20 +124,76 @@ def media_de_nota(categoria, titulo):
     else:
         print(f"Categoria '{categoria}' ou título '{titulo}' não encontrado(s).")
 
-filmes = {}
+filmes = {"Star Wars": ["1977", "George Lucas"],
+"O Guia Do Mochileiro das Gal\u00e1xias": ["2005", "Garth Jennings"],
+"De Volta Para o Futuro": ["1985", "Robert Zemeckis"],
+"Duna": ["2021", "Denis Villeneuve"],
+"Jogador N\u00ba 1": ["2018", "Steven Spielberg"],
+"Os Ca\u00e7a Fantasmas": ["1984", "Ivan Reitman"],
+"Matrix": ["1999", "Lana Wachowski, Lilly Wachowski"],
+"Akira": ["1991", "Katsuhiro Otomo"],
+"Interestrelar": ["2014", "Christopher Nolan"],
+"Blade Runner": ["1982", "Ridley Scott"],
+"Senhor dos An\u00e9is": ["2001", "Peter Jackson"]}
 
-games = {}
+games = {"Mario Bros.": ["1983", "Shigeru Miyamoto, Gunpei Yokoi"],
+ "Sonic the Hedgehog": ["1991", "Yuji Naka"],
+ "The Legend of Zelda: Ocarina of Time": ["1998", "Shigeru Miyamoto, Koji Kondo, Eiji Aonuma, Yoshiaki Koizumi, Takashi Tezuka, Yoichi Yamada"],
+ "Metroid": ["1986", "Gunpei Yokoi"],
+ "Metal Slug": ["1996", "Nazca Corporation, SNK, Irem"],
+ "Metal Gear": ["1987", "Hideo Kojima"],
+ "Grand Theft Auto (GTA)": ["1997", "Rockstar North, Rockstar Lincoln, Visual Science, DMA Design"],
+ "Tetris": ["1984", "Alexey Pajitnov, Sega, Spectrum Holobyte"],
+ "Pac-Man": ["1980", "Toru Iwatani"],
+ "Pokemon": ["1996", "Ken Sugimori, Satoshi Tajiri"]}
 
-livros = {}
+livros = {"O Guia do Mochieliro Das Gal\u00e1xias": ["1979", "Douglas Adams"],
+"O Senhor Dos An\u00e9is": ["1954", "J. R. R. Tolkien"],
+"Duna": ["1965", "Frank Herbert"],
+"2001 - Uma Odisseia no espa\u00e7o": ["1968", "Arthur C. Clarke"],
+"Jogos Vorazes": ["2008", "Suzanne Collins"],
+"Percy Jackson": ["2005", "Rick Riordan"],
+"Harry Potter": ["1997", "J. K. Rowling"],
+"Viagem ao Centro Da Terra": ["1864", "J\u00falio Verne"],
+"As Cr\u00f4nicas de Gelo e do Fogo": ["1996", "George R.R. Martin"],
+"Neuromancer": ["1984", "William Gibson"]}
 
 notas = {
-    "filmes": {},
+    "filmes": {"Star Wars": [5],
+"O Guia Do Mochileiro das Gal\u00e1xias": [5],
+"De Volta Para o Futuro": [5],
+"Duna": [5],
+"Jogador N\u00ba 1": [5],
+"Os Ca\u00e7a Fantasmas": [5],
+"Matrix": [5],
+"Akira": [5],
+"Interestrelar": [5],
+"Blade Runner": [5],
+"Senhor dos An\u00e9is": [5]},
 
-    "games": {},
+"games": {"Mario Bros.": [5],
+"Sonic the Hedgehog": [5],
+"The Legend of Zelda: Ocarina of Time": [5],
+"Metroid": [5],
+"Metal Slug": [5],
+"Metal Gear": [5],
+"Grand Theft Auto (GTA)": [5],
+"Tetris": [5],
+"Pac-Man": [5],
+"Pokemon": [5]},
 
-    "livros": {}
-
+"livros": {"O Guia do Mochieliro Das Gal\u00e1xias": [5],
+"O Senhor Dos An\u00e9is": [5],
+"Duna": [5],
+"2001 - Uma Odisseia no espa\u00e7o": [5],
+"Jogos Vorazes": [5],
+"Percy Jackson": [5],
+"Harry Potter": [5],
+"Viagem ao Centro Da Terra": [5],
+"As Cr\u00f4nicas de Gelo e do Fogo": [5],
+"Neuromancer": [5]}
 }
+
 
 dados = {
     "filmes": filmes,
@@ -146,7 +202,7 @@ dados = {
     "notas": notas
 }
 
-with open("banco_de_dados.json", "w") as f:
+with open("banco_de_dados.json", "a") as f:
     json.dump(dados, f)
 
 

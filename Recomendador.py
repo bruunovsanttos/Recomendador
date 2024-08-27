@@ -1,8 +1,8 @@
 import random
 import json
-import tkinter
 
-with open('banco_de_dados.json', 'r') as f:
+
+with open('banco_de_dados.json', "r", encoding="utf-8") as f:
     dados = json.load(f)
 
 filmes = dados["filmes"]
@@ -109,6 +109,7 @@ def registro_de_nota(categoria, titulo):
 
             notas[categoria][titulo] = []
         notas[categoria][titulo].append(nota)
+
     else:
         print(f"resgistro não contabilizado, tente novamente...")
 
@@ -118,7 +119,7 @@ def media_de_nota(categoria, titulo):
 
         if lista_notas:
             media = sum(lista_notas) / len(lista_notas)
-            print(f"A média das notas para '{titulo}' na categoria '{categoria}' é {media:.1f}")
+            return media
         else:
             print(f"Não há notas registradas para '{titulo}' na categoria '{categoria}'.")
     else:
@@ -202,16 +203,8 @@ dados = {
     "notas": notas
 }
 
-with open("banco_de_dados.json", "a") as f:
-    json.dump(dados, f)
-
-
-Tk = tkinter
-
-
 
 
 nome_usuario = input("Olá, Qual seu nome? ")
 menu()
-
 

@@ -1,10 +1,6 @@
 import random
 import json
 
-
-
-
-
 def menu():
     while True:
 
@@ -35,10 +31,10 @@ def recomendar_filmes():
         recomendacao = random.choice(list(filmes.keys()))
         ano = filmes[recomendacao][0]
         diretor = filmes[recomendacao][1]
-        print(f"""Recomendação de filme:{recomendacao} 
-                Ano de lançamento:{ano} 
-                Diretor:{diretor}
-                Nota do Titulo: {media_de_nota("filmes", recomendacao)}""")
+        print(f"""Recomendação de filme: {recomendacao} 
+                Ano de lançamento: {ano} 
+                Diretor: {diretor}
+                Nota do Título: {media_de_nota("filmes", recomendacao)}""")
 
 
 
@@ -59,10 +55,10 @@ def recomendar_livros():
         recomendacao = random.choice(list(livros.keys()))
         ano = livros[recomendacao][0]
         autor = livros[recomendacao][1]
-        print(f"""Recomendação de livro:{recomendacao} 
-                  Ano de lançamento:{ano} 
-                  Autor:{autor}
-                  Nota do Titulo: {media_de_nota("livros", recomendacao)}""")
+        print(f"""Recomendação de livro: {recomendacao} 
+                  Ano de lançamento: {ano} 
+                  Autor: {autor}
+                  Nota do Título: {media_de_nota("livros", recomendacao)}""")
 
         nota = input(f"Gostou da recomendação {nome_usuario}? S/N").strip().lower()
         if nota == "s":
@@ -82,10 +78,10 @@ def recomendar_games():
         recomendacao = random.choice(list(games.keys()))
         ano = games[recomendacao][0]
         diretor = games[recomendacao][1]
-        print(f"""Recomendação de Game:{recomendacao} 
-                Ano de lançamento:{ano} 
-                Diretor:{diretor}
-                Nota do titulo: {media_de_nota("games", recomendacao)} """)
+        print(f"""Recomendação de Game: {recomendacao} 
+                Ano de lançamento: {ano} 
+                Diretor: {diretor}
+                Nota do Título: {media_de_nota("games", recomendacao)} """)
 
 
         nota = input(f"Gostou da recomendação {nome_usuario}? S/N")
@@ -105,7 +101,7 @@ def registro_de_nota(categoria, titulo):
         notas[categoria][titulo].append(nota)
 
     else:
-        print(f"resgistro não contabilizado, tente novamente...")
+        print(f"Resgistro não contabilizado, tente novamente...")
 
 def media_de_nota(categoria, titulo):
     if categoria in notas and titulo in notas[categoria]:

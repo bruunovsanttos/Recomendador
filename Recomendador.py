@@ -89,6 +89,7 @@ def recomendar_games():
             registro_de_nota("games", recomendacao)
         media_de_nota("games", recomendacao)
 
+
     else:
         print(f"Alguma coisa deu errado {nome_usuario}, vamos tentar novamente?")
 
@@ -99,6 +100,7 @@ def registro_de_nota(categoria, titulo):
 
             notas[categoria][titulo] = []
         notas[categoria][titulo].append(nota)
+        print(f"Sua nota foi registrada com sucesso {nome_usuario}.")
 
     else:
         print(f"Resgistro não contabilizado, tente novamente...")
